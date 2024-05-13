@@ -1,14 +1,13 @@
-def card_mask(num_tests):
+def card_mask(num_tests: str) -> str:
     """Легендарно берет номер счета и делает его под маской"""
     masked_number = num_tests[:4] + " " + num_tests[5:7] + "**" + " **** " + num_tests[-4:]
     return masked_number
 
 
-def tests_mask(cards_mask):
+def tests_mask(cards_mask: str) -> str:
     """Эпически берет номер карты и делает его под маской"""
     masked_number = "**" + " " + cards_mask[-4:]
     return masked_number
-
 
 
 # ⢀⢀⣠⣶⡶⠾⠿⠶⣶⣶⣤⣤⣤⠀⠀⠀⠀⢠⣤⣤⣴⣶⣶⣾⠿⠷⢶⣮⣖⠄
