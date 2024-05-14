@@ -6,6 +6,7 @@ def convert_date(input_date: str) -> str:
     date_parts = input_date.split("T")[0].split("-")
     return f"{date_parts[2]}.{date_parts[1]}.{date_parts[0]}"
 
+
 def number_or_account(input_string: str) -> str:
     """Функция принимает строку и возвращает ее маску"""
     if "Счет" in input_string:  # Если входная строка содержит "Счет", вызываем функцию для маскировки счета
