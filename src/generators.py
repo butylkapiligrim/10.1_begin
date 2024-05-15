@@ -75,4 +75,4 @@ def card_number_generator(start: int, end: int) -> Generator[str, Any, None]:
 
 # Пример не по матиматике , а по работе геератора
 for card_number_1 in card_number_generator(1, 5):
-    print(" ".join([card_number_1[i: i + 4] for i in range(0, len(card_number_1), 4)]))
+    print(" ".join([card_number_1[i : i + 4] for i in range(0, len(card_number_1), 4)]))
