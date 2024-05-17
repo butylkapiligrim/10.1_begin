@@ -2,12 +2,11 @@ from random import randint
 from typing import Any, Generator, List
 
 
-def transaction_info(transactions_Cheboksary: List[dict]) -> Generator[str, None, None]:
+def transaction_info(transaction_descriptions: List[dict]) -> Generator[str, None, None]:
     """
-    Генератор_Чебоксары, возвращающий описания транзакций.
-    Когда сдесь был бит но flake8  с казал , бабушка этот сарай тут не нужен(
+    transaction_descriptions, возвращающий описания транзакций.
     """
-    for transaction in transactions_Cheboksary:
+    for transaction in transaction_descriptions:
         yield transaction["description"]
 
 
@@ -27,11 +26,11 @@ for _ in range(4):
     print(next(descriptions_1))
 
 
-def filter_by_money(transactions_Cheboksary: List[dict], currency: str) -> Generator[Any, None, None]:
+def filter_by_money(transaction_descriptions: List[dict], currency: str) -> Generator[Any, None, None]:
     """
     Генератор, возвращающий операции с заданной валютой из списка transactions.
     """
-    for transaction in transactions_Cheboksary:
+    for transaction in transaction_descriptions:
         if transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency:
             yield transaction
 
@@ -51,9 +50,6 @@ for _ in range(2):
 """
 Этот код испорльзует функцию `filter_by_money`, для фильтрации операции в
 списке `transactions_2` по валюте,возвращая итератор с этими операциями.
-     12221
-    ( o o )
---ooO-(_)-Ooo---
 """
 
 
@@ -62,12 +58,6 @@ def card_number_generator(start: int, end: int) -> Generator[str, Any, None]:
     Генератор номеров карт,должен генерировать номера карт
     вот так "**** **** **** ****",где * — цифра.
     Еще генерирует в указоной рендже (диопозоне)
-         122221
-      (• •)
-  ---ooO-(_)-Ooo---
-        ====
-       //  \\
-
     """
     for i in range(start, end + 1):
         yield "".join([str(randint(start, end)) for _ in range(16)])
